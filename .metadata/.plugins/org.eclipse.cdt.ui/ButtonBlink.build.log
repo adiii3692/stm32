@@ -1,0 +1,10 @@
+00:01:20 **** Incremental Build of configuration Debug for project ButtonBlink ****
+make -j12 all 
+arm-none-eabi-size  ButtonBlink.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7816	     12	   1644	   9472	   2500	ButtonBlink.elf
+Finished building: default.size.stdout
+ 
+
+00:01:20 Build Finished. 0 errors, 0 warnings. (took 345ms)
+

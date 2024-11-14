@@ -1,0 +1,11 @@
+connections/org.eclipse.remote.serial.core.connectionType/Stm32/serial.baudRate=11
+connections/org.eclipse.remote.serial.core.connectionType/Stm32/serial.byteSize=3
+connections/org.eclipse.remote.serial.core.connectionType/Stm32/serial.parity=0
+connections/org.eclipse.remote.serial.core.connectionType/Stm32/serial.portName=COM6
+connections/org.eclipse.remote.serial.core.connectionType/Stm32/serial.stopBits=0
+connections/org.eclipse.remote.serial.core.connectionType/stm32_uart/serial.baudRate=11
+connections/org.eclipse.remote.serial.core.connectionType/stm32_uart/serial.byteSize=3
+connections/org.eclipse.remote.serial.core.connectionType/stm32_uart/serial.parity=0
+connections/org.eclipse.remote.serial.core.connectionType/stm32_uart/serial.portName=COM6
+connections/org.eclipse.remote.serial.core.connectionType/stm32_uart/serial.stopBits=0
+eclipse.preferences.version=1
