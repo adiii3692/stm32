@@ -1,0 +1,10 @@
+16:37:39 **** Incremental Build of configuration Debug for project hc05 ****
+make -j12 all 
+arm-none-eabi-size  hc05.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8780	     12	   1644	  10436	   28c4	hc05.elf
+Finished building: default.size.stdout
+ 
+
+16:37:39 Build Finished. 0 errors, 0 warnings. (took 236ms)
+
