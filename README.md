@@ -1,4 +1,4 @@
-#Piezo Code Explanation and Walkthrough
+##Piezo Code Explanation and Walkthrough
 
 1) In the .ioc file, go to Timers
 2) Select TIM3, and select "PWM Generation CH1" for Channel 1
