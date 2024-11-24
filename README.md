@@ -38,3 +38,11 @@ In the main method, inside the while loop:
 play_tone(1000, 10000); // Play a 1 kHz tone for 10 second
 HAL_Delay(1000);
 ```
+
+# UART Walkthrough
+
+Utilized RCC with a HSE Bypass clock configuration as follows:
+1) HSE (High Speed External Oscillator) -> PLLCLK (Phase Locked Loops Clock) -> Max Hz HCLK (84 Hz on the Nucleo F401RE)
+2) Make sure that you disable Low Speed Clock in the RCC
+
+SYS Clock in Serial Wire Debug Mode
