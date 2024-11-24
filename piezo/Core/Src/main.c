@@ -18,7 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-
+#include "stdio.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -59,14 +59,10 @@ static void MX_TIM3_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+uint8_t rx_buffer[50]; // Buffer to store received data
+int received_number;   // The received integer
 
-/* USER CODE END 0 */
-
-/**
-  * @brief  The application entry point.
-  * @retval int
-  */
-
+// Function to be called when an integer is received
 void play_tone(uint16_t frequency, uint32_t duration_ms) {
     // Compute timer settings for the desired frequency
     uint32_t timer_clock = HAL_RCC_GetPCLK1Freq(); // Timer clock frequency
@@ -88,6 +84,25 @@ void play_tone(uint16_t frequency, uint32_t duration_ms) {
     HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_1);
 }
 
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+    if (huart->Instance == USART2) { // Check if it's USART2
+        // Convert received string to integer
+        sscanf((char *)rx_buffer, "%d", &received_number);
+
+        // Call your function with the received integer
+        play_tone(1000, 10000);
+        HAL_Delay(1000);
+
+        // Restart UART reception in interrupt mode
+        HAL_UART_Receive_IT(&huart2, rx_buffer, sizeof(rx_buffer));
+    }
+}
+/* USER CODE END 0 */
+
+/**
+  * @brief  The application entry point.
+  * @retval int
+  */
 int main(void)
 {
 
@@ -116,15 +131,14 @@ int main(void)
   MX_USART2_UART_Init();
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
-
+  // Start UART reception in interrupt mode
+  HAL_UART_Receive_IT(&huart2, rx_buffer, sizeof(rx_buffer));
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  play_tone(1000, 10000); // Play a 1 kHz tone for 1 second
-	  HAL_Delay(1000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -243,7 +257,7 @@ static void MX_USART2_UART_Init(void)
 
   /* USER CODE END USART2_Init 1 */
   huart2.Instance = USART2;
-  huart2.Init.BaudRate = 115200;
+  huart2.Init.BaudRate = 9600;
   huart2.Init.WordLength = UART_WORDLENGTH_8B;
   huart2.Init.StopBits = UART_STOPBITS_1;
   huart2.Init.Parity = UART_PARITY_NONE;

@@ -8,4 +8,14 @@ connections/org.eclipse.remote.serial.core.connectionType/stm32_uart/serial.byte
 connections/org.eclipse.remote.serial.core.connectionType/stm32_uart/serial.parity=0
 connections/org.eclipse.remote.serial.core.connectionType/stm32_uart/serial.portName=COM6
 connections/org.eclipse.remote.serial.core.connectionType/stm32_uart/serial.stopBits=0
+connections/org.eclipse.remote.serial.core.connectionType/uart115/serial.baudRate=11
+connections/org.eclipse.remote.serial.core.connectionType/uart115/serial.byteSize=3
+connections/org.eclipse.remote.serial.core.connectionType/uart115/serial.parity=0
+connections/org.eclipse.remote.serial.core.connectionType/uart115/serial.portName=COM8
+connections/org.eclipse.remote.serial.core.connectionType/uart115/serial.stopBits=0
+connections/org.eclipse.remote.serial.core.connectionType/uart_check/serial.baudRate=6
+connections/org.eclipse.remote.serial.core.connectionType/uart_check/serial.byteSize=3
+connections/org.eclipse.remote.serial.core.connectionType/uart_check/serial.parity=0
+connections/org.eclipse.remote.serial.core.connectionType/uart_check/serial.portName=COM8
+connections/org.eclipse.remote.serial.core.connectionType/uart_check/serial.stopBits=0
 eclipse.preferences.version=1

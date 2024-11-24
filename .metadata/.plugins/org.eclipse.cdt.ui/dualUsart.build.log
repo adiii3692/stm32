@@ -1,0 +1,10 @@
+23:43:06 **** Incremental Build of configuration Debug for project dualUsart ****
+make -j12 all 
+arm-none-eabi-size  dualUsart.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10664	     16	   1648	  12328	   3028	dualUsart.elf
+Finished building: default.size.stdout
+ 
+
+23:43:06 Build Finished. 0 errors, 0 warnings. (took 508ms)
+
